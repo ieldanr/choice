@@ -19,4 +19,16 @@ angular.module('moniNodeApp')
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
+
+    $scope.polls = [];
+    $http.get('/api/polls').success(function(polls) {
+      $scope.polls = polls;
+    });
+
+    $scope.voteOption1=function(index){
+      var id = $scope.polls[index]._id;
+      $http.post('/api/polls/' + id + '/voteOption1').success(function(poll) {
+        $scope.polls[index] = poll;
+      });
+    };
   });
