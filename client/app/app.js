@@ -5,15 +5,11 @@ angular.module('moniNodeApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap',
-  'mobile-angular-ui'
+  'ui.bootstrap'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
-    $stateProvider
-      .state('ask', { url: "/ask", templateUrl: 'app/ask/ask.html' })
-
-    //$urlRouterProvider
+    $urlRouterProvider
       //.otherwise('/');
 
     $locationProvider.html5Mode(true);
