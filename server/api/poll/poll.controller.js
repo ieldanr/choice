@@ -105,6 +105,18 @@ exports.voteOption2 = function(req, res) {
   });
 }
 
+exports.myChoices = function(req, res) {
+  if(!req.params.user_id || !req.params.user_id.length){
+    return res.status(403).send("user not specified");
+  }
+  console.log(req.params.user_id);
+  Poll.find({ 'user': req.params.user_id },function (err, polls) {
+    console.log(polls);
+    if(err) { return handleError(res, err); }
+    return res.json(200, polls);
+  });
+}
+
 
 function handleError(res, err) {
   return res.send(500, err);

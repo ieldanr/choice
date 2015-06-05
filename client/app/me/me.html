@@ -8,12 +8,12 @@
   <div class="row poll" ng-repeat="poll in polls">
         <p>{{poll.question}}</p>
         <div ng-if="poll.voteType == 'images'">
-        <img ng-click="voteOption1($index)" ng-src="{{ poll.option1 }}" />
-        <img ng-click="voteOption2($index)" ng-src="{{ poll.option2 }}" />
+        <img ng-src="{{ poll.option1 }}" />
+        <img ng-src="{{ poll.option2 }}" />
         </div>
         <div ng-if="poll.voteType == 'text'">
-          <p ng-click="voteOption1($index)">{{ poll.option1 }}</p>
-          <p ng-click="voteOption2($index)">{{ poll.option2 }}</p>
+          <p>{{ poll.option1 }}</p>
+          <p>{{ poll.option2 }}</p>
         </div>
 
         <p>{{poll.option1Count}}</p>
