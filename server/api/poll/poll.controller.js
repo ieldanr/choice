@@ -59,12 +59,24 @@ exports.voteOption1 = function(req, res) {
   Poll.findById(req.params.id, function (err, poll) {
     if(err) { return handleError(res, err); }
     if(!poll) { return res.send(404); }
-    if(poll.limitVotes <= poll.option1Count + poll.option2Count) { return res.send(403); }
-    poll.option1Count += 1;
-    poll.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.json(200, poll);
-    });
+    if(poll.limitVotes <= poll.option1Count + poll.option2Count) { return res.status(403).send("vote limit"); }
+    if(!poll.usersVoted){
+      poll.usersVoted = [];
+    }
+    if(!req.body.user || !req.body.user.length){
+      return res.status(403).send("user not specified");
+    }
+    if(poll.usersVoted.indexOf(req.body.user) >= 0) {
+      return res.status(403).send("user already voted");
+    } else {
+      poll.option1Count += 1;
+      poll.usersVoted.push(req.body.user);
+      poll.save(function (err) {
+        if (err) { return handleError(res, err); }
+        return res.json(200, poll);
+      });
+    }
+
   });
 }
 
@@ -73,12 +85,23 @@ exports.voteOption2 = function(req, res) {
   Poll.findById(req.params.id, function (err, poll) {
     if(err) { return handleError(res, err); }
     if(!poll) { return res.send(404); }
-    if(poll.limitVotes <= poll.option1Count + poll.option2Count) { return res.send(403); }
-    poll.option2Count += 1;
-    poll.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.json(200, poll);
-    });
+    if(poll.limitVotes <= poll.option1Count + poll.option2Count) { return res.status(403).send("vote limit"); }
+    if(!poll.usersVoted){
+      poll.usersVoted = [];
+    }
+    if(!req.body.user || !req.body.user.length){
+      return res.status(403).send("user not specified");
+    }
+    if(poll.usersVoted.indexOf(req.body.user) >= 0) {
+      return res.status(403).send("user already voted");
+    } else {
+      poll.option2Count += 1;
+      poll.usersVoted.push(req.body.user);
+      poll.save(function (err) {
+        if (err) { return handleError(res, err); }
+        return res.json(200, poll);
+      });
+    }
   });
 }
 

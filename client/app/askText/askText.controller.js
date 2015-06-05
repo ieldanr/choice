@@ -12,7 +12,8 @@ angular.module('moniNodeApp')
           option2Count: 0,
           limitType: "vote",
           limitVotes: 100,
-          voteType: "text"
+          voteType: "text",
+          usersVoted: []
         };
         $http.post('/api/polls', json_poll).success(function(data){
           $location.path("/");

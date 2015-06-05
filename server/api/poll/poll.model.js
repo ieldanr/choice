@@ -12,7 +12,8 @@ var PollSchema = new Schema({
   option2Count: Number,
   limitType: String,
   limitVotes: Number,
-  voteType: String
+  voteType: String,
+  usersVoted: Array
 });
 
 module.exports = mongoose.model('Poll', PollSchema);

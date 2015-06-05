@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('moniNodeApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, Auth) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -27,15 +27,23 @@ angular.module('moniNodeApp')
 
     $scope.voteOption1=function(index){
       var id = $scope.polls[index]._id;
-      $http.post('/api/polls/' + id + '/voteOption1').success(function(poll) {
+      $http.post('/api/polls/' + id + '/voteOption1', { user: Auth.getCurrentUser()._id }).success(function(poll) {
         $scope.polls[index] = poll;
+      }).error(function(res){
+        if(res == "user already voted"){
+          alert("Already voted!");
+        }
       });
     };
 
     $scope.voteOption2=function(index){
       var id = $scope.polls[index]._id;
-      $http.post('/api/polls/' + id + '/voteOption2').success(function(poll) {
+      $http.post('/api/polls/' + id + '/voteOption2', { user: Auth.getCurrentUser()._id }).success(function(poll) {
         $scope.polls[index] = poll;
+      }).error(function(res){
+        if(res == "user already voted"){
+          alert("Already voted!");
+        }
       });
     };
   });
