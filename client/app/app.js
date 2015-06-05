@@ -9,8 +9,12 @@ angular.module('moniNodeApp', [
   'mobile-angular-ui'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-    $urlRouterProvider
-      .otherwise('/');
+
+    $stateProvider
+      .state('ask', { url: "/ask", templateUrl: 'app/ask/ask.html' })
+
+    //$urlRouterProvider
+      //.otherwise('/');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
