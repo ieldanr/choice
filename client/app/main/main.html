@@ -1,14 +1,13 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <h1 class="page-header">Timeline</h1>
-<div class="container wrapper">
- <div class="row">lala</div>
- <div class="row">lala</div><div class="row">lala</div><div class="row">lala</div>
- <div class="row">lala</div><div class="row">lala</div><div class="row">lala</div><div class="row">lala</div>
- <div class="row">lala</div><div class="row">lala</div><div class="row">lala</div><div class="row">lala</div>
- <div class="row">lala</div><div class="row">lala</div><div class="row">lala</div><div class="row">lala</div>
- <div class="row">lala</div><div class="row">lala</div><div class="row">lala</div><div class="row">lala</div>
- <div class="row">lala</div><div class="row">lala</div><div class="row">lala</div><div class="row">lala</div><div class="row">lala</div>
- <div class="row">lala</div><div class="row">lala</div><div class="row">lala</div><div class="row">lala</div>
+<div class="container">
+  <div class="row" ng-repeat="poll in polls">
+        <p>{{poll.question}}</p>
+        <a ng-click="voteOption1($index)"class="btn btn-default" href="#" role="button">yes</a>
+        <p>{{poll.option1Count}}</p>
+        <a class="btn btn-default" href="#" role="button">no</a>
+        <p>{{poll.option2Count}}</p>
+  </div>
 </div>
 
 <footer class="footer">
