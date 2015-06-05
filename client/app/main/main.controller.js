@@ -31,4 +31,11 @@ angular.module('moniNodeApp')
         $scope.polls[index] = poll;
       });
     };
+
+    $scope.voteOption2=function(index){
+      var id = $scope.polls[index]._id;
+      $http.post('/api/polls/' + id + '/voteOption2').success(function(poll) {
+        $scope.polls[index] = poll;
+      });
+    };
   });

@@ -15,8 +15,12 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
-.wrapper {
-  overflow: auto;
+.poll {
+  height: 200px;
+}
+
+.poll img {
+  height: 150px;
 }
 
 // Component styles are injected through grunt

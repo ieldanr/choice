@@ -1,14 +1,19 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<h1 class="page-header">Timeline</h1>
 <div class="container">
-  <div class="row" ng-repeat="poll in polls">
+  <a href="#crew">Crew</a>
+  <a href="#hot">Hot</a>
+  <a href="#new">New</a>
+</div>
+<div class="container">
+  <div class="row poll" ng-repeat="poll in polls">
         <p>{{poll.question}}</p>
-        <a ng-click="voteOption1($index)"class="btn btn-default" href="#" role="button">yes</a>
+        <img ng-click="voteOption1($index)" ng-src="{{ poll.option1 }}" />
+        <img ng-click="voteOption2($index)" ng-src="{{ poll.option2 }}" />
         <p>{{poll.option1Count}}</p>
-        <a class="btn btn-default" href="#" role="button">no</a>
         <p>{{poll.option2Count}}</p>
   </div>
 </div>
+
 
 <footer class="footer">
   <div class="container">
