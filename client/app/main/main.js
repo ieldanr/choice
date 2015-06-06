@@ -4,7 +4,7 @@ angular.module('moniNodeApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('main', {
-        url: '/',
+        url: '/:id',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       });
