@@ -13,7 +13,7 @@ angular.module('moniNodeApp')
           option1Count: 0,
           option2Count: 0,
           limitType: 'vote',
-          limitVotes: poll.limitVotes,
+          limitVotes: 100,
           voteType: 'text',
           usersVoted: []
         };
