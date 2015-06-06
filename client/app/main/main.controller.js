@@ -23,6 +23,7 @@ angular.module('moniNodeApp')
     $scope.polls = [];
     $http.get('/api/polls').success(function(polls) {
       $scope.polls = polls;
+      $scope.votedOnPoll = Array($scope.polls.length);
     });
 
     $scope.voteOption1=function(index){
@@ -45,5 +46,20 @@ angular.module('moniNodeApp')
           console.log('Already voted!');
         }
       });
+    };
+    $scope.voted = function(index){
+      if($scope.votedOnPoll[index]){
+        return true;
+      }else{
+        var poll = $scope.polls[index];
+        if(!poll){ return false;}
+        var user = Auth.getCurrentUser();
+        if(poll.usersVoted.indexOf(user._id) >= 0){
+          $scope.votedOnPoll[index] = true;
+          return true;
+        }else{
+          return false;
+        }
+      }
     };
   });

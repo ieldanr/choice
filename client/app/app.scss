@@ -28,24 +28,29 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
      width: 100%;
  }
 
+.navbar {
+    min-height: 30px;
+}
+
  button {
      border: none;
-     position: absolute;
-         top: 50%;
-         left: 50%;
-         margin-right: -50%;
-         transform: translate(-50%, -50%);
-         -ms-transform: translate(-50%, -50%); /* IE 9 */
-         -webkit-transform: translate(-50%, -50%); /* Safari and Chrome */
-         -o-transform: translate(-50%, -50%); /* Opera */
-         -moz-transform: translate(-50%, -50%); /* Firefox */
+     background-color: white;
+
+
+     font-size: 24px;
+     width: 100%;
 
  }
  hr{
      border-color: black;
      width: 70%;
-
  }
+
+ form {
+     display: inline-block;
+     text-align: center;
+     width: 100%;
+     }
 
  li{
 
@@ -54,24 +59,122 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
  }
 
+ .col-md-12{
+     padding: 0;
+ }
 
+ .container{
+     padding: 0;
+     padding-top: 70px;
+ }
+
+ .Absolute-Center {
+   margin: auto;
+   position: absolute;
+   top: 0; left: 0; bottom: 0; right: 0;
+ }
+
+ .Absolute-Center.is-Responsive {
+   height: 80%;
+   width: 80%;
+   padding: 0;
+ }
+
+
+ .buttonsCont{
+     padding-top: 400px;
+ }
+
+ .buttonsContImg{
+     padding-top: 200px;
+ }
+
+ .mainTextFrom{
+     padding: 20px;
+     margin: 30px 40px 30px 40px;
+     border-radius: 20px;
+     height: 70px;
+     width: 80%;
+     font-size: 20px;
+       border: solid 1px #0071bb;
+   transition: border 0.3s;
+   box-shadow: inset 0 0 0 1px #0071bb;
+
+ }
+
+
+ .imgBottons{
+
+      height: 200px;
+ }
+
+
+ .optionTextFrom{
+     padding: 20px;
+     margin: 30px 40px 30px 40px;
+     border-radius: 20px;
+     height: 50px;
+     width: 80%;
+     font-size: 18px;
+     border: solid 1px #ff1d25;
+     transition: border 0.3s;
+     box-shadow: inset 0 0 0 1px #ff1d25;
+ }
+
+
+
+ .shoot{
+
+     margin-top: 70px;
+     padding: 0;
+     width: 100%;
+     height: 50px;
+     border: solid 1px #ff1d25;
+     font-size: 20px;
+
+ }
+
+ .btn-group{
+     padding-top: 30px;
+     height: 100%;
+     margin: 10px;
+     display: inline;
+ }
+
+ .btn{
+     border-radius: 0;
+     font-size: 18px;
+     margin-top: 40px;
+ }
+
+ .btn-group-r{
+     width: 100%;
+     border-right: solid 1px #ff1d25;
+     display: inline-table;
+ }
+
+ .buttons{
+     padding-top: 30px;
+     height: 50px;
+ }
 
  .fbLog{
 
-     height: 15%;
+     height: 100px;
      width: 100%;
 
  }
+
+
  .feed{
      background-color: #ededed;
      text-align: center;
  }
 
  .feed-text-votes{
-     text-align: left;
      color: gray;
      font-size: 14px;
-     padding: 20px;
+     padding-bottom: 10px;
  }
 
  .feed-text-time{
@@ -81,30 +184,48 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
      padding: 20px;
  }
 
-
-
-
  .feed-text-red {
      background-color: #f95f6a;
      border: solid 3px #ff1d25;
-     border-radius: 100px;
-     width: 200px;
-     height: 200px;
+     border-radius: 75px;
+     width: 150px;
+     height: 150px;
      margin: 20px;
      padding: 0;
-     padding-top: 80px;
+     padding-top: 60px;
      text-align: center;
      color: white;
      font-size: 20px;
-
      float: center;
          position: relative;
          text-align: center;
+     margin-left: auto;
+     margin-right: auto;
  }
 
  .feed-text-blue{
      background-color: #4b90b7;
      border: solid 3px #0071bb;
+     border-radius: 75px;
+     width: 150px;
+     height: 150px;
+     margin: 20px;
+     padding: 0;
+     padding-top: 60px;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+     float: center;
+         position: relative;
+         text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+
+ .feed-red {
+     background-color: #f95f6a;
+     border: solid 3px #ff1d25;
      border-radius: 100px;
      width: 200px;
      height: 200px;
@@ -114,19 +235,71 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
      text-align: center;
      color: white;
      font-size: 20px;
+     text-align: center;
+     font-size: 22px;
+ }
+
+ .feed-blue{
+     background-color: #4b90b7;
+     border: solid 3px #0071bb;
+     border-radius: 100px;
+     width: 200px;
+     height: 200px;
+     margin: 20px;
+     padding: 0;
+     padding-top: 80px;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+     text-align: center;
+     font-size: 22px;
+
+
+ }
+
+ .feed-red-lose {
+     background-color: #f95f6a;
+     border: solid 3px #ff1d25;
+     border-radius: 100px;
+     width: 150px;
+     height: 150px;
+     margin: 45px;
+     padding: 0;
+     padding-top: 50px;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+
      float: center;
          position: relative;
          text-align: center;
+             font-size: 22px;
+ }
 
-
+ .feed-blue-lose{
+     background-color: #4b90b7;
+     border: solid 3px #0071bb;
+     border-radius: 100px;
+     width: 150px;
+     height: 150px;
+     margin: 45px;
+     padding: 0;
+     padding-top: 50px;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+     float: center;
+         position: relative;
+         text-align: center;
+             font-size: 22px;
  }
 
  .feed-img-red {
      background-color: #f95f6a;
      border: solid 3px #ff1d25;
-     border-radius: 100px;
-     width: 200px;
-     height: 200px;
+     border-radius: 75px;
+     width: 150px;
+     height: 150px;
      margin: 20px;
      padding: 0;
      text-align: center;
@@ -136,15 +309,50 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
      float: center;
          position: relative;
          text-align: center;
+             font-size: 22px;
  }
 
  .feed-img-blue{
      background-color: #4b90b7;
      border: solid 3px #0071bb;
-     border-radius: 100px;
-     width: 200px;
-     height: 200px;
+     border-radius: 75px;
+     width: 150px;
+     height: 150px;
      margin: 20px;
+     padding: 0;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+     float: center;
+         position: relative;
+         text-align: center;
+ }
+
+ .feed-img-red-lose {
+     background-color: #f95f6a;
+     border: solid 3px #ff1d25;
+     border-radius: 100px;
+     width: 150px;
+     height: 150px;
+     margin: 45px;
+     padding: 0;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+
+     float: center;
+         position: relative;
+         text-align: center;
+             font-size: 22px;
+ }
+
+ .feed-img-blue-lose{
+     background-color: #4b90b7;
+     border: solid 3px #0071bb;
+     border-radius: 100px;
+     width: 150px;
+     height: 150px;
+     margin: 45px;
      padding: 0;
      text-align: center;
      color: white;
@@ -160,7 +368,6 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  }
 
  .full{
-
      height: 100%;
      width: 100%;
      margin: 0;
@@ -185,41 +392,54 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
          transform: translate(-50%, -50%);
  }
 
- .topbar{
+ .row{
+     background-color: solid white;
+ }
 
-         text-align: center;
-         height: 40px;
-         border-bottom: solid 1px black ;
+ .feedwall {
+   margin-top: 50px;
  }
 
  .setting{
-
-         margin: 5px;
+         margin: 5px 20px 0 15px;
          float: right;
-         position: relative;
-         display: inline-block;
+         display: inline;
          text-align: right;
-         width: 10%
-
+         height: 30px;
  }
 
+ .topbar{
+         background-color: white;
+         text-align: left;
+         height: 50px;
+         border-bottom: solid 1px black ;
+ }
+
+
  .topTool{
-     font-size: 19px;
+     background-color: white;
+     font-size: 20px;
          text-align: center;
          height: 30px;
          border-bottom: solid 1px black ;
          border-top: solid 1px black ;
-
-
+         display: inline-block;
  }
 
 
  .toplogo{
-         height: 40px;
+         height: 35px;
          width: auto;
          padding: 1px;
          display: inline-block;
+         float: center;
+         position: absolute;
          text-align: center;
+         margin: auto;
+         left: 0;
+         right: 0;
+         top: 0;
+         bottom: 0;
  }
 
  .topB{
@@ -229,25 +449,12 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  .topBR{
          padding-right: 0;
          padding-left: auto;
-
          color: black;
  }
 
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-.poll {
-  height: 200px;
-}
-
-.poll img {
-  height: 150px;
-}
+ .top{
+     height: 40px;
+ }
 
 // Component styles are injected through grunt
 // injector

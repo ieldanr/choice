@@ -1,19 +1,30 @@
-<div class="col-md-12">
+<nav class="row  topbar navbar navbar-default navbar-fixed-top">
+    <img src="assets/images/topLogo.png" class=" col-md-12 toplogo ">
+</nav>
+<div class="container">
   <form>
-  <div class="form-group">
-    <label for="question">Question</label>
-    <input ng-model="poll.question" type="text" class="form-control" id="question" placeholder="Enter question">
-  </div>
-  <div class="form-group">
-    <label for="option1">Option 1</label>
-    <input ng-model="poll.option1" type="text" class="form-control" id="option1" placeholder="Option1">
-  </div>
-  <div class="form-group">
-    <label for="option1">Option 2</label>
-    <input ng-model="poll.option2" type="text" class="form-control" id="option2" placeholder="Option2">
-  </div>
-  <p>Max Votes 100</p>
-  <input type="submit" value="Shoot" ng-click="create(poll)" class="btn btn-default"></input>
-</form>
+       <input type="text"  ng-model="poll.question" class="form-control mainTextFrom" name="quetion" placeholder="Your Question">
+
+       <input type="text"  ng-model="poll.option1" class="form-control optionTextFrom" name="option1" placeholder="Option 1">
+
+       <input type="text"  ng-model="poll.option2" class="form-control optionTextFrom" name="option2" placeholder="Option 2">
+       </div>
+
+       <div class="col-xs-6 ">
+           <button class="btn ">date</button>
+       </div>
+       <div class="col-xs-6 ">
+           <button class="btn ">max votes 100</button>
+       </div>
+       <!--<div class="col-md-12 ">
+           <button class="btn ">facebook</button>
+       </div>-->
+       <div class="col-md-12  ">
+           <button ng-click="create(poll)" class="btn shoot">Shoot</button>
+       </div>
+    </form>
+
 </div>
-<pre>form = {{user | json}}</pre>
+<nav class="row navbar navbar-default navbar-fixed-bottom text-center">
+       <li class="col-xs-12 topTool"><a href="/">Cancel</a></li>
+</nav>

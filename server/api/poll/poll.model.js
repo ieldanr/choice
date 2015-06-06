@@ -8,6 +8,7 @@ var PollSchema = new Schema({
   option1: String,
   option2: String,
   user: String,
+  username: String,
   option1Count: Number,
   option2Count: Number,
   limitType: String,

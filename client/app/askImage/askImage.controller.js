@@ -78,15 +78,14 @@ angular.module('moniNodeApp')
     };
 
     $scope.create = function(question){
-      console.log($scope.image1name);
-      console.log($scope.image2name);
-      console.log(question);
+      var user = Auth.getCurrentUser();
       if($scope.image1name && $scope.image2name && question){
         var jsonPoll = {
           question: question,
           option1: $scope.image1name,
           option2: $scope.image2name,
-          user: Auth.getCurrentUser()._id,
+          user: user._id,
+          username: user.name,
           option1Count: 0,
           option2Count: 0,
           limitType: 'vote',
