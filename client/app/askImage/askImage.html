@@ -1,17 +1,16 @@
 <div class="col-md-12">
   <div>
     <form>
-      watching model:
-    <div class="button" ngf-select ng-model="files">Upload using model $watch</div>
-    <div class="button" ngf-select ngf-change="upload($files)">Upload on file change</div>
-    Drop File:
-    <div ngf-drop ng-model="files" class="drop-box"
-        ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
-        ngf-accept="'image/*,application/pdf'">Drop Images or PDFs files here</div>
-    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-
-    Image thumbnail: <img ngf-src="files[0]" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'">
-</div>
+    <label for="question">Question</label>
+    <input ng-model="question" type="text" class="form-control" id="question" placeholder="Enter question">
+    <div class="button btn" ngf-select ng-model="files">Upload image 1</div>
+        Image thumbnail: <img style="height:300px;width:300px" ng-if="files[0] !== undefined" ngf-src="files[0]" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'">
+    </div>
+    <div class="button btn" ngf-select ng-model="files2">Upload image 2</div>
+        Image thumbnail: <img style="height:300px;width:300px" ng-if="files2[0] !== undefined" ngf-src="files2[0]" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'">
+    </div>
+    <p>Max Votes 100</p>
+    <input type="submit" value="Shoot" ng-click="create(question)" class="btn btn-default"></input>
     </form>
   </div>
 </div>
