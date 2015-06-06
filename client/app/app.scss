@@ -7,6 +7,232 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 /**
  * App-wide Styles
  */
+ .uiViewContainer {
+   height: 100%;
+ }
+
+ @font-face {
+     font-family: Caviar;
+     src: url(../assets/fonts/caviar/CaviarDreams.ttf);
+ }
+ @font-face {
+     font-family: CaviarBold;
+     src: url(../assets/fonts/caviar/CaviarDreams_Bold.ttf);
+ }
+
+ html, body {
+     overflow-x: hidden;
+     font-family: "Caviar","Helvetica Neue",Helvetica,Arial,sans-serif;
+     font-size: 14px;
+     height: 100%;
+     width: 100%;
+ }
+
+ button {
+     border: none;
+     position: absolute;
+         top: 50%;
+         left: 50%;
+         margin-right: -50%;
+         transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%); /* IE 9 */
+         -webkit-transform: translate(-50%, -50%); /* Safari and Chrome */
+         -o-transform: translate(-50%, -50%); /* Opera */
+         -moz-transform: translate(-50%, -50%); /* Firefox */
+
+ }
+ hr{
+     border-color: black;
+     width: 70%;
+
+ }
+
+ li{
+
+     list-style: none;
+     display: inline;
+
+ }
+
+
+
+ .fbLog{
+
+     height: 15%;
+     width: 100%;
+
+ }
+ .feed{
+     background-color: #ededed;
+     text-align: center;
+ }
+
+ .feed-text-votes{
+     text-align: left;
+     color: gray;
+     font-size: 14px;
+     padding: 20px;
+ }
+
+ .feed-text-time{
+     text-align: right;
+     color: gray;
+     font-size: 14px;
+     padding: 20px;
+ }
+
+
+
+
+ .feed-text-red {
+     background-color: #f95f6a;
+     border: solid 3px #ff1d25;
+     border-radius: 100px;
+     width: 200px;
+     height: 200px;
+     margin: 20px;
+     padding: 0;
+     padding-top: 80px;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+
+     float: center;
+         position: relative;
+         text-align: center;
+ }
+
+ .feed-text-blue{
+     background-color: #4b90b7;
+     border: solid 3px #0071bb;
+     border-radius: 100px;
+     width: 200px;
+     height: 200px;
+     margin: 20px;
+     padding: 0;
+     padding-top: 80px;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+     float: center;
+         position: relative;
+         text-align: center;
+
+
+ }
+
+ .feed-img-red {
+     background-color: #f95f6a;
+     border: solid 3px #ff1d25;
+     border-radius: 100px;
+     width: 200px;
+     height: 200px;
+     margin: 20px;
+     padding: 0;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+
+     float: center;
+         position: relative;
+         text-align: center;
+ }
+
+ .feed-img-blue{
+     background-color: #4b90b7;
+     border: solid 3px #0071bb;
+     border-radius: 100px;
+     width: 200px;
+     height: 200px;
+     margin: 20px;
+     padding: 0;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+     float: center;
+         position: relative;
+         text-align: center;
+ }
+
+ .feed-question{
+     padding: 10px;
+     text-align: center;
+ }
+
+ .full{
+
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+ }
+
+ .logoback{
+
+     background-image: url(../assets/images/bk.jpg);
+     text-align: center;
+     height: 70%;
+     width: 100%;
+ }
+
+ .logo{
+     width: 33%;
+     height: auto;
+     position: absolute;
+         top: 50%;
+         left: 50%;
+         margin-right: -50%;
+         transform: translate(-50%, -50%);
+ }
+
+ .topbar{
+
+         text-align: center;
+         height: 40px;
+         border-bottom: solid 1px black ;
+ }
+
+ .setting{
+
+         margin: 5px;
+         float: right;
+         position: relative;
+         display: inline-block;
+         text-align: right;
+         width: 10%
+
+ }
+
+ .topTool{
+     font-size: 19px;
+         text-align: center;
+         height: 30px;
+         border-bottom: solid 1px black ;
+         border-top: solid 1px black ;
+
+
+ }
+
+
+ .toplogo{
+         height: 40px;
+         width: auto;
+         padding: 1px;
+         display: inline-block;
+         text-align: center;
+ }
+
+ .topB{
+         text-align: right;
+         color: black;
+ }
+ .topBR{
+         padding-right: 0;
+         padding-left: auto;
+
+         color: black;
+ }
+
 
 .browsehappy {
     margin: 0.2em 0;

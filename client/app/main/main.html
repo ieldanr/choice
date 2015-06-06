@@ -1,38 +1,49 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-<div class="container">
-  <a href="#crew">Crew</a>
-  <a href="#hot">Hot</a>
-  <a href="#new">New</a>
-</div>
-<div class="container">
-  <div class="row poll" ng-repeat="poll in polls">
-        <p>{{poll.question}}</p>
+<div class="container full" >
+    <div class="row  topbar">
+
+            <img src="assets/images/topLogo.png" class=" col-md-4 col-md-offset-4 toplogo ">
+            <i class="fa fa-cog fa-2x col-md-4 setting "></i>
+
+    </div>
+    <nav class="row">
+            <li class="col-xs-4 topTool">Crew</li>
+            <li class="col-xs-4 topTool">Hot</li>
+            <li class="col-xs-4 topTool">New</li>
+    </nav>
+
+    <div class="row feed" ng-repeat="poll in polls">
+
+        <div class=" col-xs-offset-1 col-xs-10 feed-question">
+          {{poll.question}}
+        </div>
         <div ng-if="poll.voteType == 'images'">
-        <img ng-click="voteOption1($index)" ng-src="{{ poll.option1 }}" />
-        <img ng-click="voteOption2($index)" ng-src="{{ poll.option2 }}" />
+          <div class="col-xs-6 ">
+              <img src="assets/images/red.jpeg" class=" feed-img-red">
+          </div>
+          <div class="col-xs-6  ">
+              <img src="assets/images/blue.jpeg" class=" feed-img-blue">
+          </div>
         </div>
         <div ng-if="poll.voteType == 'text'">
-          <p ng-click="voteOption1($index)">{{ poll.option1 }}</p>
-          <p ng-click="voteOption2($index)">{{ poll.option2 }}</p>
+          <div class="col-xs-6 ">
+               <div ng-click="voteOption1($index)" class=" feed-text-red">{{ poll.option1 }}</div>
+          </div>
+          <div class="col-xs-6  ">
+               <div ng-click="voteOption2($index)" class=" feed-text-blue">{{ poll.option2 }}</div>
+          </div>
         </div>
+        <div class="col-xs-6  ">
+             <div class=" feed-text-votes">{{ poll.option1Count + poll.option2Count }}/{{ poll.limitVotes}}</div>
+        </div>
+        <div class="col-xs-6  feed">
+             <div class=" feed-text-time"></div>
+        </div>
+        <hr>
+    </div>
 
-        <p>{{poll.option1Count}}</p>
-        <p>{{poll.option2Count}}</p>
-        <p>{{poll.user}}</p>
-  </div>
+    <nav class="row">
+        <li class="col-xs-4 topTool"><a href="/">Feed</a></li>
+        <li href="/ask" class="col-xs-4 topTool"><a href="/ask">Ask</a></li>
+        <li href="/me" class="col-xs-4 topTool"><a href="/me">Me</a></li>
+    </nav>
 </div>
-<div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
-<div class="row" id="bottomNav">
-  <div class="col-xs-4 text-center"><a href="/"><i class="glyphicon glyphicon-circle-arrow-left"></i><br>Feed</a></div>
-  <div class="col-xs-4 text-center"><a href="/ask"><i class="glyphicon glyphicon-circle-arrow-down"></i><br>Ask</a></div>
-  <div class="col-xs-4 text-center"><a href="/me"><i class="glyphicon glyphicon-circle-arrow-right"></i><br>Me</a></div>
-</div>
-</div>
-
-
-<footer class="footer">
-  <div class="container">
-      <p>Choice the App |
-        <a href="https://twitter.com/choice">@choicetheapp</a></p>
-  </div>
-</footer>
