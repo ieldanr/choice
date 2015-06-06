@@ -23,7 +23,7 @@ angular.module('moniNodeApp')
     $scope.polls = [];
     $http.get('/api/polls').success(function(polls) {
       $scope.polls = polls;
-      $scope.votedOnPoll = Array($scope.polls.length);
+      $scope.votedOnPoll = new Array($scope.polls.length);
     });
 
     $scope.voteOption1=function(index){
