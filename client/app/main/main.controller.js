@@ -30,8 +30,8 @@ angular.module('moniNodeApp')
       $http.post('/api/polls/' + id + '/voteOption1', { user: Auth.getCurrentUser()._id }).success(function(poll) {
         $scope.polls[index] = poll;
       }).error(function(res){
-        if(res == "user already voted"){
-          alert("Already voted!");
+        if(res === 'user already voted'){
+          console.log('Already voted!');
         }
       });
     };
@@ -41,8 +41,8 @@ angular.module('moniNodeApp')
       $http.post('/api/polls/' + id + '/voteOption2', { user: Auth.getCurrentUser()._id }).success(function(poll) {
         $scope.polls[index] = poll;
       }).error(function(res){
-        if(res == "user already voted"){
-          alert("Already voted!");
+        if(res === 'user already voted'){
+          console.log('Already voted!');
         }
       });
     };
