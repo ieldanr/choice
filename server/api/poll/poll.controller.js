@@ -2,6 +2,40 @@
 
 var _ = require('lodash');
 var Poll = require('./poll.model');
+var Image = require('./image.model');
+var crypto = require('crypto');
+
+exports.signature = function(req, res) {
+    Image.create({name: "test"}, function(err, img) {
+      if(err) { return handleError(res, err); }
+      var expiration = new Date();
+      expiration.setHours(expiration.getHours() + 1);
+
+      var policy = {
+          expiration: expiration.toISOString(),
+          conditions: [
+              {bucket: "choicetheapp-assets"},
+              ["starts-with", "$key", ""],
+              {acl: "public-read"},
+              ["starts-with", "$Content-Type", "image/"],
+              ["content-length-range", 0, 1048576]
+          ]
+      };
+
+      var awsKeyId = "AKIAJDKDAV3D3GPL3N7A";
+      var awsKey = "YXBhNnBn65gW5w2v+0V/PKGUhapXU/YQysZ0541r";
+
+      var policyString = JSON.stringify(policy);
+      var encodedPolicyString = new Buffer(policyString).toString("base64");
+
+      var hmac = crypto.createHmac("sha1", awsKey);
+      hmac.update(encodedPolicyString);
+
+      var digest = hmac.digest('base64');
+      return res.json({awskeyid: awsKeyId, policy: encodedPolicyString, signature: digest, keyname: img._id + ".png"});
+    });
+};
+
 
 // Get list of polls
 exports.index = function(req, res) {

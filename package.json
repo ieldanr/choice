@@ -21,7 +21,9 @@
     "passport-local": "~0.1.6",
     "passport-facebook": "latest",
     "composable-middleware": "^0.3.0",
-    "connect-mongo": "^0.4.1"
+    "connect-mongo": "^0.4.1",
+    "aws-sdk": "*",
+    "knox": "*"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
