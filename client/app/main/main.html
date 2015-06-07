@@ -19,21 +19,21 @@
         <div ng-if="poll.voteType == 'image'">
           <div class="col-xs-6">
               <img ng-click="voteOption1(poll)" ng-src="{{ 'https://s3.amazonaws.com/choicetheapp-assets/' + poll.option1 }}" class=" feed-img-red">
-              <div ng-if="voted($index)">{{ poll.option1Count/(poll.option1Count + poll.option2Count)*100 | number: 0}}%</div>
+              <div ng-if="voted($index, poll)">{{ poll.option1Count/(poll.option1Count + poll.option2Count)*100 | number: 0}}%</div>
           </div>
           <div class="col-xs-6">
               <img ng-click="voteOption2(poll)" ng-src="{{ 'https://s3.amazonaws.com/choicetheapp-assets/' + poll.option2 }}" class=" feed-img-blue">
-              <div ng-if="voted($index)">{{ poll.option2Count/(poll.option1Count + poll.option2Count)*100 | number: 0}}%</div>
+              <div ng-if="voted($index, poll)">{{ poll.option2Count/(poll.option1Count + poll.option2Count)*100 | number: 0}}%</div>
           </div>
         </div>
         <div ng-if="poll.voteType == 'text'">
           <div class="col-xs-6">
                <div ng-click="voteOption1(poll)" class=" feed-text-red">{{ poll.option1 }}</div>
-               <div ng-if="voted($index)">{{ poll.option1Count/(poll.option1Count + poll.option2Count)*100 | number: 0}}%</div>
+               <div ng-if="voted($index, poll)">{{ poll.option1Count/(poll.option1Count + poll.option2Count)*100 | number: 0}}%</div>
           </div>
           <div class="col-xs-6">
                <div ng-click="voteOption2(poll)" class=" feed-text-blue">{{ poll.option2 }}</div>
-               <div ng-if="voted($index)">{{ poll.option2Count/(poll.option1Count + poll.option2Count)*100 | number: 0}}%</div>
+               <div ng-if="voted($index, poll)">{{ poll.option2Count/(poll.option1Count + poll.option2Count)*100 | number: 0}}%</div>
           </div>
         </div>
         <div class="col-xs-12">

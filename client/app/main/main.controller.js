@@ -50,11 +50,10 @@ angular.module('moniNodeApp')
         });
       };
 
-    $scope.voted = function(index){
+    $scope.voted = function(index, poll){
       if($scope.votedOnPoll[index]){
         return true;
       }else{
-        var poll = $scope.polls[index];
         if(!poll){ return false;}
         var user = Auth.getCurrentUser();
         if(poll.usersVoted.indexOf(user._id) >= 0){
