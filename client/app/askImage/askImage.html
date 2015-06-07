@@ -1,18 +1,12 @@
 <div class="col-md-12">
-  <div>
     <form>
     <label for="question">Question</label>
     <input ng-model="question" type="text" class="form-control" id="question" placeholder="Enter question">
     <div class="button btn" ngf-select ng-model="files">Upload image 1</div>
-    <img style="height:300px;width:300px" ng-if="files[0] !== undefined" ngf-src="files[0]" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'">
-    </div>
+    <img style="height:300px;width:300px" ng-if="files[0] !== undefined" ngf-src="files[0]" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'"/>
     <div class="button btn" ngf-select ng-model="files2">Upload image 2</div>
-    <img style="height:300px;width:300px" ng-if="files2[0] !== undefined" ngf-src="files2[0]" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'">
-    </div>
-    <br>
-    <br>
+    <img style="height:300px;width:300px" ng-if="files2[0] !== undefined" ngf-src="files2[0]" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'"/>
     <p>Max Votes 100</p>
     <input type="submit" value="Shoot" ng-click="create(question)" class="btn btn-default"></input>
     </form>
-  </div>
 </div>
