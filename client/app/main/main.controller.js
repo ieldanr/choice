@@ -26,27 +26,30 @@ angular.module('moniNodeApp')
       $scope.votedOnPoll = new Array($scope.polls.length);
     });
 
-    $scope.voteOption1=function(index){
-      var id = $scope.polls[index]._id;
-      $http.post('/api/polls/' + id + '/voteOption1', { user: Auth.getCurrentUser()._id }).success(function(poll) {
-        $scope.polls[index] = poll;
-      }).error(function(res){
-        if(res === 'user already voted'){
-          console.log('Already voted!');
-        }
-      });
-    };
+    $scope.voteOption1=function(poll){
+       var id = poll._id;
+       $http.post('/api/polls/' + id + '/voteOption1', { user: Auth.getCurrentUser()._id }).success(function(result) {
+       console.log(merge(poll, result));
+       //poll = result;
+       }).error(function(res){
+       if(res === 'user already voted'){
+       console.log('Already voted!');
+       }
+       });
+     };
 
-    $scope.voteOption2=function(index){
-      var id = $scope.polls[index]._id;
-      $http.post('/api/polls/' + id + '/voteOption2', { user: Auth.getCurrentUser()._id }).success(function(poll) {
-        $scope.polls[index] = poll;
-      }).error(function(res){
+     $scope.voteOption2=function(poll){
+        var id = poll._id;
+        $http.post('/api/polls/' + id + '/voteOption2', { user: Auth.getCurrentUser()._id }).success(function(result) {
+        console.log(merge(poll, result));
+        //poll = result;
+        }).error(function(res){
         if(res === 'user already voted'){
-          console.log('Already voted!');
+        console.log('Already voted!');
         }
-      });
-    };
+        });
+      };
+
     $scope.voted = function(index){
       if($scope.votedOnPoll[index]){
         return true;
@@ -62,4 +65,29 @@ angular.module('moniNodeApp')
         }
       }
     };
+
+  function merge(dst){
+  var slice = [].slice;
+  var isArray = Array.isArray;
+  function baseExtend(dst, objs, deep) {
+    for (var i = 0, ii = objs.length; i < ii; ++i) {
+      var obj = objs[i];
+      if (!angular.isObject(obj) && !angular.isFunction(obj)) continue;
+      var keys = Object.keys(obj);
+      for (var j = 0, jj = keys.length; j < jj; j++) {
+        var key = keys[j];
+        var src = obj[key];
+        if (deep && angular.isObject(src)) {
+          if (!angular.isObject(dst[key])) dst[key] = isArray(src) ? [] : {};
+          baseExtend(dst[key], [src], true);
+        } else {
+          dst[key] = src;
+        }
+      }
+    }
+
+    return dst;
+  }
+  return baseExtend(dst, slice.call(arguments, 1), true);
+}
   });
