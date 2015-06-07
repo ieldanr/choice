@@ -1,15 +1,8 @@
 'use strict';
 
 angular.module('moniNodeApp')
-  .controller('MainCtrl', function ($scope, $http, Auth, $stateParams) {
+  .controller('MainCtrl', function ($scope, $http, Auth) {
     $scope.awesomeThings = [];
-
-    $scope.idFilter = $stateParams.id;
-    if($scope.idFilter){
-      $scope.idFilterBool = true;
-    }else{
-      $scope.idFilterBool = false;
-    }
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
