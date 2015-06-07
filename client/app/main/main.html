@@ -11,7 +11,7 @@
     </div>-->
   </nav>
   <div class="container full feedwall">
-    <div class="row feed" ng-repeat="poll in polls">
+    <div class="row feed" ng-repeat="poll in polls | orderBy: '_id':true">
 
         <div class=" col-xs-offset-1 col-xs-10 feed-question">
           {{poll.question}}
